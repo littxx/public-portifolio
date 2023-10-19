@@ -1,72 +1,330 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Seu Nome - Portfólio</title>
+    <title>Meu Portfólio</title>
     <style>
-      body {
-        font-family: Arial, sans-serif;
+      /* Reset de estilos padrão */
+      /* Reset de estilos padrão */
+      body,
+      h1,
+      h2,
+      h3,
+      p {
         margin: 0;
         padding: 0;
-        background-color: #f2f2f2;
       }
-      header {
-        background-color: #007bff;
-        color: #fff;
-        text-align: center;
-        padding: 20px;
+
+      /* Estilos gerais */
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #1f1f1f; /* Cor de fundo escura */
+        color: #fff; /* Cor do texto */
       }
-      h1 {
-        font-size: 36px;
-      }
+
       .container {
-        max-width: 800px;
+        max-width: 1200px;
         margin: 0 auto;
         padding: 20px;
-        background-color: #fff;
       }
-      .portfolio-item {
-        margin-bottom: 20px;
+
+      /* Estilos do cabeçalho (header) */
+      header {
+        background-color: #111; /* Cor de fundo escura para o cabeçalho */
+        padding: 10px 0;
       }
-      .portfolio-item img {
+
+      nav ul {
+        list-style: none;
+      }
+
+      nav ul li {
+        display: inline;
+        margin-right: 20px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: #f9004d; /* Cor para links no cabeçalho */
+        font-weight: bold;
+        font-size: 16px;
+        transition: color 0.3s; /* Adicionar efeito de transição de cor */
+      }
+
+      nav ul li a:hover {
+        color: #871d3e; /* Cor alterada ao passar o mouse */
+      }
+
+      /* Estilos da seção inicial (inicio) */
+      #inicio {
+        background-image: url("background.jpg"); /* Adicione uma imagem de fundo */
+        background-size: cover;
+        background-position: center;
+        text-align: center;
+        padding: 150px 0;
+      }
+
+      #inicio h1 {
+        font-size: 46px;
+      }
+
+      #inicio p {
+        margin-top: 5px;
+        font-size: 20px;
+      }
+
+      /* Estilos da seção sobre (sobre mim) */
+      #sobre {
+        padding: 50px 0;
+        background-color: #333; /* Cor de fundo escura para a seção */
+        border-top: 1px solid #444; /* Linha superior */
+        border-bottom: 1px solid #444; /* Linha inferior */
+      }
+
+      #sobre h2 {
+        font-size: 28px;
+        color: #f9004d; /* Cor para cabeçalhos na seção */
+      }
+
+      #sobre p {
+        font-size: 18px;
+      }
+
+      /* Estilos da seção de projetos */
+      #projetos {
+        padding: 50px 0;
+      }
+
+      .projeto {
+        background-color: #222; /* Cor de fundo escura para cada projeto */
+        padding: 20px;
+        margin: 20px 0;
+        border: 1px solid #333; /* Borda */
+        border-radius: 5px; /* Cantos arredondados */
+      }
+
+      .projeto img {
         max-width: 100%;
       }
+
+      .projeto h3 {
+        font-size: 24px;
+        margin: 10px 0;
+        color: #f9004d; /* Cor para títulos de projeto */
+      }
+
+      /* Estilos da seção de habilidades */
+      #habilidades {
+        padding: 50px 0;
+        background-color: #333; /* Cor de fundo escura para a seção */
+        border-top: 1px solid #444; /* Linha superior */
+        border-bottom: 1px solid #444; /* Linha inferior */
+      }
+
+      #habilidades h2 {
+        font-size: 28px;
+        color: #f9004d; /* Cor para cabeçalhos na seção */
+      }
+
+      #habilidades ul {
+        list-style: none;
+      }
+
+      #habilidades ul li {
+        font-size: 20px;
+        margin: 10px 0;
+      }
+
+      /* Estilos da seção de contato */
+      #contato {
+  text-align: center; /* Centraliza o conteúdo horizontalmente */
+  background-color: #333; /* Cor de fundo escura para a seção */
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 300px; /* Define a altura para ocupar a altura total da janela */
+}
+
+#contato p {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+      /* Estilos do rodapé (footer) */
+      footer {
+        background-color: #111; /* Cor de fundo escura para o rodapé */
+        text-align: center;
+        padding: 10px 0;
+      }
+      .video {
+  max-width: 100%;
+  height: 800px;
+}
+
+      footer p {
+        font-size: 16px;
+        color: white; /* Cor para texto no rodapé */
+      }
+
+      /* Estilos para links */
+      a {
+        color: #f9004d; /* Cor para links */
+        text-decoration: none;
+      }
+      /* Estilos para as seções de habilidades */
+      .habilidades-container {
+        display: grid;
+        grid-template-columns: repeat(
+          auto-fill,
+          minmax(250px, 1fr)
+        ); /* Cria uma grade de colunas com largura mínima de 250px e ajustável */
+        gap: 20px; /* Espaçamento entre as colunas */
+      }
+      .habilidades-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      a:hover {
+        text-decoration: underline;
+        color: #871d3e; /* Cor alterada ao passar o mouse */
+      }
+      @media  (max-width: 768px) {
+  .h2 {
+    font-size: 24px; /* Tamanho menor para títulos em telas de celular */
+  }
+
+  ul {
+    font-size: 16px; /* Tamanho menor para listas em telas de celular */
+  }
+}
     </style>
   </head>
   <body>
     <header>
-      <h1>Seu Nome</h1>
-      <p>Desenvolvedor React Native Sênior</p>
+      <nav>
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#habilidades">Habilidades</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><a href="/src/pdf/Ederlan Brito.pdf">Curriculo</a></li>
+        </ul>
+      </nav>
     </header>
-    <div class="container">
-      <section id="portfolio">
-        <h2>Meu Portfólio</h2>
-        <div class="portfolio-item">
-          <h3>Projeto 1</h3>
-          <p>Descrição do Projeto 1</p>
-          <img src="imagem_projeto1.jpg" alt="Projeto 1" />
-          <a href="link_projeto1.html">Ver Projeto</a>
+
+    <section id="inicio">
+      <div class="container">
+        <h1>Olá, eu sou Ederlan</h1>
+        <p>Desenvolvedor Full-Stack</p>
+      </div>
+    </section>
+
+    <section id="projetos">
+      <div class="container">
+        <h2>Projetos</h2>
+        <!-- Lista de projetos -->
+        <div class="projeto">
+          <img src="src/assets/bike.png" alt="Projeto 1" />
+          <h3>
+            Bike Dinamica -
+            <a href="https://littxx.github.io/bike/">Clique Aqui!</a>
+          </h3>
+          <p>Projeto feito para startup.</p>
         </div>
-        <div class="portfolio-item">
-          <h3>Projeto 2</h3>
-          <p>Descrição do Projeto 2</p>
-          <img src="imagem_projeto2.jpg" alt="Projeto 2" />
-          <a href="link_projeto2.html">Ver Projeto</a>
+        <div class="projeto">
+          <img src="src/assets/Sistemsolar1.png" alt="Projeto 2" />
+          <h3>
+            Sistema Solar -
+            <a href="https://littxx.github.io/Mundo_infinito/">Clique Aqui!</a>
+          </h3>
+          <p>Projeto feito para demonstração do cliente.</p>
         </div>
-        <!-- Adicione mais projetos conforme necessário -->
-      </section>
-      <section id="contato">
-        <h2>Contato</h2>
-        <p>Entre em contato comigo em:</p>
-        <p>Email: seu@email.com</p>
-        <p>
-          LinkedIn:
-          <a href="https://www.linkedin.com/seu-perfil" target="_blank"
-            >Perfil no LinkedIn</a
-          >
-        </p>
-      </section>
-    </div>
+        <div class="projeto">
+          <img src="src/assets/PagDownload.png" alt="Projeto 2" />
+          <h3>
+            Page Downloads -
+            <a href="https://littxx.github.io/loucura/">Clique Aqui</a>
+          </h3>
+          <p>Pagina feita para Downloads do programa do cliente.</p>
+        </div>
+        <div class="projeto">
+          <img src="src/assets/Cogumelo.png" alt="Projeto 2" />
+          <h3>
+            Cogumelo Game -
+            <a href="https://littxx.github.io/buraco-ou-vidro/">Clique aqui!</a>
+          </h3>
+          <p>Jogo ao estilo Flappy bird.</p>
+        </div>
+        <div class="projeto">
+          <img src="src/assets/systemsolar2.png" alt="Projeto 2" />
+          <h3>Sistema Solar simples - <a href="">Clique Aqui</a></h3>
+          <p>Projeto feito para demonstração.</p>
+        </div>
+        <div class="projeto">
+          <img src="src/assets/JogoVelha.png" alt="Projeto 2" />
+          <h3>
+            Jogo da velha -
+            <a href="https://littxx.github.io/Jogo-da-Velha/">Clique aqui!</a>
+          </h3>
+          <p>Jogo da velha ao estilo Halloween.</p>
+        </div>
+        <div class="projeto">
+          <h1></h1>
+          <video class="video" controls>
+            <source src="/src/assets/agua.mp4" type="video/mp4" />
+            Seu navegador não suporta a exibição de vídeos.
+          </video>
+          
+          <h1 style="padding-top: 10px">App de agua feito em react native</h1>
+        </div>
+      </div>
+    </section>
+
+    <section id="habilidades">
+      <h1 style="display: flex; justify-content: center;"> Habilidades</h1>
+      <div class="habilidades-container">
+        <div class="container">
+          <h2>Front-End</h2>
+          <ul>
+            <li>JavaScript</li>
+            <li>Html</li>
+            <li>Css</li>
+            <li>React</li>
+            <li>Angular</li>
+            <li>Next.js</li>
+          </ul>
+        </div>
+
+        <div class="container">
+          <h2>Back-end</h2>
+          <ul>
+            <li>Node.js</li>
+            <li>Java</li>
+            <li>PostgreSql</li>
+            <li>Docker</li>
+            <li>AWS</li>
+            <li>GraphQl</li>
+          </ul>
+        </div>
+
+        
+    </section>
+
+    <section id="contato">
+      <div class="container">
+        <h2 style="margin: 10px;">Contato</h2>
+        <p>Entre em contato comigo pelo email: ederlanbrito@gmail.com</p>
+        <p>ou (11) 97075-0048</p>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2023 Eden</p>
+    </footer>
   </body>
 </html>
